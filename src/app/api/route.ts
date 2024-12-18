@@ -1,9 +1,9 @@
-export async function fetchWeatherData(lat: number, lon: number) {
+export async function fetchWeatherRoute(lat: string, lon: string) {
   const baseURL = "https://api.open-meteo.com/v1/forecast?";
 
   const params = new URLSearchParams({
-    latitude: lat.toString(),
-    longitude: lon.toString(),
+    latitude: lat,
+    longitude: lon,
     hourly: "temperature_2m",
   });
 
@@ -15,7 +15,6 @@ export async function fetchWeatherData(lat: number, lon: number) {
       throw new Error(`Error fetching data: ${res.status} - ${res.statusText}`);
 
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (err) {
     console.error(err);

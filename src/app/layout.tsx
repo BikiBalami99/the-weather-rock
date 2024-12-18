@@ -1,5 +1,3 @@
-import { fetchWeatherData } from "./api/route";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -11,6 +9,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-fetchWeatherData(25.6774, 139.65);
-
